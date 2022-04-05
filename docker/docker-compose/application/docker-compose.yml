@@ -1,0 +1,18 @@
+version: "3.3"
+
+services:
+  db:
+    image: postgres:14.2-alpine3.15
+    environment:
+      - POSTGRES_PASSWORD=qwer1234
+  app:
+    image: harpipl.jfrog.io/spring-boot-demo:1.0-SNAPSHOT
+    environment:
+      - DS_URL=jdbc:postgresql://db:5432/postgres
+      - DS_USERNAME=postgres
+      - DS_PASSWORD=qwer1234
+      - LIQUIBASE_LOGGING_LEVEL=INFO
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
