@@ -27,6 +27,7 @@
         <docker.artifactory>harpipl.jfrog.io</docker.artifactory>
 
         <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <liquibase.version>4.9.1</liquibase.version>
         <lombok.version>1.18.22</lombok.version>
         <spring.version>2.5.4</spring.version>
     </properties>
@@ -36,6 +37,11 @@
             <dependency>
                 <groupId>pl.harpi</groupId>
                 <artifactId>app</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>pl.harpi</groupId>
+                <artifactId>db</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -75,6 +81,11 @@
                 <artifactId>h2</artifactId>
                 <version>2.1.210</version>
             </dependency>
+            <dependency>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-core</artifactId>
+                <version>${liquibase.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -109,6 +120,11 @@
                         <arg>-Amapstruct.defaultComponentModel=spring</arg>
                     </compilerArgs>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>${liquibase.version}</version>
             </plugin>
         </plugins>
     </build>
