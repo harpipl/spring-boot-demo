@@ -5,5 +5,7 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
 
-    <include file="identity/changelog.xml" relativeToChangelogFile="true"/>
+    <changeSet author="areka" id="001">
+        <sql>create schema identity</sql>
+    </changeSet>
 </databaseChangeLog>
