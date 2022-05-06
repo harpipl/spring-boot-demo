@@ -30,6 +30,8 @@
         <liquibase.version>4.9.1</liquibase.version>
         <lombok.version>1.18.22</lombok.version>
         <spring.version>2.5.4</spring.version>
+        <groovy.version>3.0.10</groovy.version>
+        <spock.version>2.1-groovy-3.0</spock.version>
     </properties>
 
     <dependencyManagement>
@@ -85,6 +87,18 @@
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-core</artifactId>
                 <version>${liquibase.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>${groovy.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.spockframework</groupId>
+                <artifactId>spock-core</artifactId>
+                <version>${spock.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
