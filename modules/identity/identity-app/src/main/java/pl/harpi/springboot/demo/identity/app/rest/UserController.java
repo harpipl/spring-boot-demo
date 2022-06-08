@@ -26,7 +26,7 @@ final class UserController {
       @RequestBody final CreateUserRequest request) {
 
     final var user = userService.create(userMapper.toUser(request));
-    final var uri = UriBuilder.requestUriWithId(user.getId());
+    final var uri = UriBuilder.requestUriWithId(user.id());
 
     return ResponseEntity.created(uri).body(userMapper.toCreateUserResponse(user));
   }
