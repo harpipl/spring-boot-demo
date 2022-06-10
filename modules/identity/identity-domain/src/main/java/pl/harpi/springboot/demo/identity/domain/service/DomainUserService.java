@@ -2,6 +2,7 @@ package pl.harpi.springboot.demo.identity.domain.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 import pl.harpi.springboot.demo.identity.domain.DomainException;
 import pl.harpi.springboot.demo.identity.domain.User;
 import pl.harpi.springboot.demo.identity.domain.repository.UserRepository;
@@ -9,8 +10,9 @@ import pl.harpi.springboot.demo.identity.domain.repository.UserRepository;
 import java.util.Optional;
 
 @Service
+@Validated
 @RequiredArgsConstructor
-final class DomainUserService implements UserService {
+class DomainUserService implements UserService {
   private final UserRepository repository;
 
   @Override

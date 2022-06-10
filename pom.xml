@@ -34,6 +34,7 @@
         <spring.version>2.7.0</spring.version>
         <groovy.version>3.0.10</groovy.version>
         <spock.version>2.1-groovy-3.0</spock.version>
+        <javax.version>2.0.1.Final</javax.version>
     </properties>
 
     <dependencyManagement>
@@ -102,6 +103,11 @@
                 <artifactId>spock-core</artifactId>
                 <version>${spock.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${javax.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

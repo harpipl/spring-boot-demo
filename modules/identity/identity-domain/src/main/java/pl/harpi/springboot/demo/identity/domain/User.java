@@ -1,4 +1,6 @@
 package pl.harpi.springboot.demo.identity.domain;
 
-public record User(String id, String firstName, String lastName) {
+import pl.harpi.springboot.demo.identity.domain.validation.UserUniqueId;
+
+public record User(@UserUniqueId String id, String firstName, String lastName) {
 }
